@@ -51,6 +51,7 @@
                 <li><a href="#categories">Collectie</a></li>
                 <li><a href="javascript:void(0)" onclick="openCustomModal()">Custom</a></li>
                 <li><a href="#process">Proces</a></li>
+                <li><a href="#configurator">Configurator</a></li>
             </ul>
             <div class="nav-right">
                 <a href="#categories" class="nav-cta">Shop nu &#8250;</a>
@@ -69,6 +70,7 @@
             <li><a href="#categories" onclick="closeMobileMenu()">Collectie</a></li>
             <li><a href="javascript:void(0)" onclick="closeMobileMenu();openCustomModal()">Custom</a></li>
             <li><a href="#process" onclick="closeMobileMenu()">Proces</a></li>
+            <li><a href="#configurator" onclick="closeMobileMenu()">Configurator</a></li>
         </ul>
     </div>
 </header>
@@ -96,6 +98,7 @@
     <div class="hero-overlay"></div>
     <div class="hero-inner">
         <div class="hero-content">
+            <div class="hero-label">Tufting Studio België</div>
             <h1>Handmade<br/><em>Tufted Rugs</em></h1>
             <p class="hero-sub">Deskmats, tapijten en muurdecoratie — allemaal met de hand gemaakt van premium garen.</p>
             <div class="hero-buttons">
@@ -103,10 +106,10 @@
                 <a href="javascript:void(0)" class="btn-hero-ghost" onclick="openCustomModal()">Custom aanvragen</a>
             </div>
         </div>
-        <div class="hero-scroll-hint" aria-hidden="true">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
     </div>
 </section>
 
@@ -202,6 +205,113 @@
         <div class="proc"><div class="proc-n">04</div><div class="proc-i" aria-hidden="true">&#128230;</div><h3>Levering</h3><p>Gratis verzonden in NL &amp; BE. Binnen 14 dagen thuis.</p></div>
     </div>
 </section>
+
+<!-- ===== CONFIGURATOR ===== -->
+<section class="config-sec" id="configurator">
+    <div class="config-inner">
+        <div class="config-left">
+            <div class="section-label">Bouw je eigen</div>
+            <h2>Custom <em>Configurator</em></h2>
+            <p class="config-sub">Kies je type, maat en kleuren — wij sturen je direct een prijsopgave via WhatsApp.</p>
+        </div>
+        <div class="config-right">
+            <!-- Stap 1: Type -->
+            <div class="config-step" id="cfg-step-1">
+                <div class="config-step-label"><span class="config-step-num">1</span> Wat wil je laten maken?</div>
+                <div class="config-options" id="cfg-type-options">
+                    <button class="cfg-opt" data-value="Keyboard Rug" data-price="35" onclick="cfgSelect('type', this)">
+                        <span class="cfg-opt-icon">⌨️</span>
+                        <span class="cfg-opt-name">Keyboard Rug</span>
+                        <span class="cfg-opt-price">v.a. €35</span>
+                    </button>
+                    <button class="cfg-opt" data-value="Tapijt" data-price="75" onclick="cfgSelect('type', this)">
+                        <span class="cfg-opt-icon">🟩</span>
+                        <span class="cfg-opt-name">Tapijt</span>
+                        <span class="cfg-opt-price">v.a. €75</span>
+                    </button>
+                    <button class="cfg-opt" data-value="Muurdecoratie" data-price="80" onclick="cfgSelect('type', this)">
+                        <span class="cfg-opt-icon">🖼️</span>
+                        <span class="cfg-opt-name">Muurdecoratie</span>
+                        <span class="cfg-opt-price">v.a. €80</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stap 2: Maat -->
+            <div class="config-step config-step--hidden" id="cfg-step-2">
+                <div class="config-step-label"><span class="config-step-num">2</span> Welke maat?</div>
+                <div class="config-options" id="cfg-size-options"></div>
+            </div>
+
+            <!-- Stap 3: Kleur -->
+            <div class="config-step config-step--hidden" id="cfg-step-3">
+                <div class="config-step-label"><span class="config-step-num">3</span> Kleurstijl voorkeur?</div>
+                <div class="config-options" id="cfg-color-options">
+                    <button class="cfg-opt cfg-opt--color" data-value="Warm (oranje, beige, bruin)" onclick="cfgSelect('color', this)">
+                        <span class="cfg-color-swatch" style="background:linear-gradient(135deg,#c4501a,#e8c06a,#d6c9a8)"></span>
+                        <span class="cfg-opt-name">Warm</span>
+                    </button>
+                    <button class="cfg-opt cfg-opt--color" data-value="Koel (blauw, groen, grijs)" onclick="cfgSelect('color', this)">
+                        <span class="cfg-color-swatch" style="background:linear-gradient(135deg,#2a5a8a,#4a7a6a,#8a9e7b)"></span>
+                        <span class="cfg-opt-name">Koel</span>
+                    </button>
+                    <button class="cfg-opt cfg-opt--color" data-value="Neutraal (wit, beige, zwart)" onclick="cfgSelect('color', this)">
+                        <span class="cfg-color-swatch" style="background:linear-gradient(135deg,#f5f0e8,#d6c9a8,#3a3330)"></span>
+                        <span class="cfg-opt-name">Neutraal</span>
+                    </button>
+                    <button class="cfg-opt cfg-opt--color" data-value="Eigen kleurkeuze" onclick="cfgSelect('color', this)">
+                        <span class="cfg-color-swatch cfg-color-swatch--rainbow"></span>
+                        <span class="cfg-opt-name">Eigen keuze</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stap 4: Extra info -->
+            <div class="config-step config-step--hidden" id="cfg-step-4">
+                <div class="config-step-label"><span class="config-step-num">4</span> Inspiratiefoto uploaden <span class="cfg-optional">(optioneel)</span></div>
+                <div class="cfg-upload-zone" id="cfg-upload-zone" onclick="document.getElementById('cfg-file-input').click()" ondragover="cfgDragOver(event)" ondragleave="cfgDragLeave(event)" ondrop="cfgDrop(event)">
+                    <input type="file" id="cfg-file-input" accept="image/*" style="display:none" onchange="cfgFileChosen(this.files[0])">
+                    <div class="cfg-upload-idle" id="cfg-upload-idle">
+                        <span class="cfg-upload-icon">📎</span>
+                        <span class="cfg-upload-text">Klik of sleep een afbeelding hier</span>
+                        <span class="cfg-upload-hint">JPG, PNG, WEBP — max 10MB</span>
+                    </div>
+                    <div class="cfg-upload-preview" id="cfg-upload-preview" style="display:none">
+                        <img id="cfg-preview-img" src="" alt="Preview" />
+                        <button class="cfg-upload-remove" onclick="cfgRemoveImage(event)" aria-label="Afbeelding verwijderen">✕</button>
+                    </div>
+                    <div class="cfg-upload-status" id="cfg-upload-status" style="display:none">
+                        <div class="cfg-upload-spinner"></div>
+                        <span id="cfg-upload-status-text">Uploaden...</span>
+                    </div>
+                </div>
+                <div class="config-step-label" style="margin-top:1rem"><span class="config-step-num">5</span> Extra wensen <span class="cfg-optional">(optioneel)</span></div>
+                <textarea id="cfg-notes" class="cfg-textarea" placeholder="Bijv. een specifiek karakter, logo, afbeelding, patroon..." rows="3"></textarea>
+            </div>
+
+            <!-- Samenvatting + CTA -->
+            <div class="config-summary" id="cfg-summary" style="display:none">
+                <div class="cfg-summary-inner" id="cfg-summary-text"></div>
+                <div class="cfg-summary-price" id="cfg-summary-price"></div>
+            </div>
+
+            <div class="config-cta" id="cfg-cta" style="display:none">
+                <button class="cfg-wa-btn" onclick="cfgSendWhatsApp()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Stuur mijn aanvraag via WhatsApp
+                </button>
+                <button class="cfg-reset-btn" onclick="cfgReset()">↺ Opnieuw beginnen</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FLOATING WHATSAPP ===== -->
+<a href="https://wa.me/32489345632" target="_blank" rel="noopener noreferrer"
+   class="floating-wa" id="floating-wa" aria-label="Chat via WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="floating-wa-label">Stel een vraag</span>
+</a>
 
 <!-- ===== CONTACT ===== -->
 <section class="contact-sec" id="contact">
@@ -314,524 +424,77 @@
 <!-- ===== CUSTOM MODAL ===== -->
 <div class="overlay" id="custom-modal-overlay" onclick="closeCustomModal()" aria-hidden="true"></div>
 <div class="modal" id="custom-modal" role="dialog" aria-label="Custom Design Aanvragen" aria-modal="true">
-    <div class="modal-head"><h3>Custom Design Aanvragen</h3><button onclick="closeCustomModal()" aria-label="Modal sluiten">&#10005;</button></div>
+    <div class="modal-head"><h3>Custom Design Aanvragen</h3><button id="modal-close-btn" onclick="closeCustomModal()" aria-label="Modal sluiten">&#10005;</button></div>
     <div class="modal-body">
-        <div class="custom-how">
-            <p class="custom-how-title">Hoe werkt het?</p>
-            <div class="custom-how-steps">
-                <div class="custom-how-step"><span class="step-num" aria-hidden="true">1</span><span>Kies WhatsApp of Instagram</span></div>
-                <div class="custom-how-step"><span class="step-num" aria-hidden="true">2</span><span>Stuur een <strong>foto of afbeelding</strong> van je idee</span></div>
-                <div class="custom-how-step"><span class="step-num" aria-hidden="true">3</span><span>Wij sturen je een prijs &amp; planning terug</span></div>
-            </div>
-        </div>
+        <!-- Type -->
         <div class="fg">
             <label for="custom-type">Type product</label>
             <select id="custom-type">
-                <option value="Keyboard Rug">Keyboard Rug — €35</option>
-                <option value="Tapijt">Tapijt — €75</option>
-                <option value="Muurdecoratie">Muurdecoratie — €80</option>
+                <option value="Keyboard Rug">Keyboard Rug — v.a. €35</option>
+                <option value="Tapijt">Tapijt — v.a. €75</option>
+                <option value="Muurdecoratie">Muurdecoratie — v.a. €80</option>
             </select>
         </div>
+        <!-- Maat -->
         <div class="fg">
-            <label for="custom-name">Je naam (optioneel)</label>
+            <label for="custom-size">Maat <span class="fg-optional">(optioneel)</span></label>
+            <select id="custom-size">
+                <option value="">Weet ik nog niet</option>
+                <option value="800×350mm">800×350mm (Keyboard Rug)</option>
+                <option value="900×400mm">900×400mm (Keyboard Rug)</option>
+                <option value="80×60cm">80×60cm (Tapijt)</option>
+                <option value="100×80cm">100×80cm (Tapijt)</option>
+                <option value="50×50cm">50×50cm (Muur)</option>
+                <option value="60×60cm">60×60cm (Muur)</option>
+                <option value="80×80cm">80×80cm (Muur)</option>
+                <option value="Aangepaste maat">Aangepaste maat</option>
+            </select>
+        </div>
+        <!-- Naam -->
+        <div class="fg">
+            <label for="custom-name">Je naam <span class="fg-optional">(optioneel)</span></label>
             <input type="text" id="custom-name" placeholder="Naam" autocomplete="name"/>
         </div>
-        <div class="custom-cta-label">📎 Stuur je foto via:</div>
+        <!-- Beschrijving -->
+        <div class="fg">
+            <label for="custom-desc">Beschrijving / wensen <span class="fg-optional">(optioneel)</span></label>
+            <textarea id="custom-desc" rows="2" placeholder="Bijv. logo, karakter, kleur, patroon..."></textarea>
+        </div>
+        <!-- Foto upload -->
+        <div class="fg">
+            <label>Inspiratiefoto <span class="fg-optional">(optioneel)</span></label>
+            <div class="cfg-upload-zone" id="modal-upload-zone" onclick="document.getElementById('modal-file-input').click()" ondragover="modalDragOver(event)" ondragleave="modalDragLeave(event)" ondrop="modalDrop(event)">
+                <input type="file" id="modal-file-input" accept="image/*" style="display:none" onchange="modalFileChosen(this.files[0])">
+                <div class="cfg-upload-idle" id="modal-upload-idle">
+                    <span class="cfg-upload-icon">📎</span>
+                    <span class="cfg-upload-text">Klik of sleep je inspiratiefoto</span>
+                    <span class="cfg-upload-hint">JPG, PNG, WEBP — max 10MB</span>
+                </div>
+                <div class="cfg-upload-preview" id="modal-upload-preview" style="display:none">
+                    <img id="modal-preview-img" src="" alt="Preview" />
+                    <button class="cfg-upload-remove" onclick="modalRemoveImage(event)" aria-label="Afbeelding verwijderen">✕</button>
+                </div>
+                <div class="cfg-upload-status" id="modal-upload-status" style="display:none">
+                    <div class="cfg-upload-spinner"></div>
+                    <span id="modal-upload-status-text">Uploaden...</span>
+                </div>
+            </div>
+        </div>
+        <!-- Verzend knoppen -->
         <div class="checkout-btns">
             <button class="ck-wa" onclick="customWhatsApp()">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Stuur foto via WhatsApp
+                Verstuur via WhatsApp
             </button>
             <button class="ck-ig" onclick="customInstagram()">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-                Stuur foto via Instagram DM
+                Verstuur via Instagram DM
             </button>
         </div>
-        <p class="custom-note">Geen foto? Beschrijf je idee gewoon in het chatbericht 😊</p>
+        <p class="custom-note">De foto wordt automatisch meegestuurd in je bericht 📎</p>
     </div>
 </div>
 
-<script>
-    // =============================================
-    // CENTRALE PRODUCTDATA
-    // =============================================
-    const PRODUCTS = {
-        keyboard: [
-            {n:'Keyboard Rug Classic', p:35, s:'900×400mm', img:'images/KeyboardRug.avif'},
-            {n:'Get Inspired',         p:35, s:'900×400mm', img:'images/GetInspired.png'},
-            {n:'Cream Checker',        p:35, s:'900×400mm', bg:'linear-gradient(135deg,#e8dcc8,#d6c9a8)'},
-            {n:'Midnight Setup',       p:35, s:'800×350mm', bg:'linear-gradient(135deg,#3a3330,#5c4a40)'},
-            {n:'Sunset Gradient',      p:35, s:'900×400mm', bg:'linear-gradient(135deg,#c4501a,#e8c06a)'},
-            {n:'Violet Wave',          p:35, s:'900×400mm', bg:'linear-gradient(135deg,#818cf8,#7b3fa8)'}
-        ],
-        tapijten: [
-            {n:'Sabr-Patience',        p:75, s:'80×60cm',  img:'images/tufting_Sabr.jpg'},
-            {n:'Green Abstract Rug',   p:75, s:'80×60cm',  img:'images/green_carpet.webp'},
-            {n:'Ocean Abstract',       p:75, s:'80×60cm',  bg:'linear-gradient(135deg,#2a5a8a,#4a7a6a)'},
-            {n:'Golden Hour',          p:75, s:'80×60cm',  bg:'linear-gradient(135deg,#e8c06a,#d6831a)'},
-            {n:'Noir Essentials',      p:75, s:'80×60cm',  bg:'linear-gradient(135deg,#1a1a1a,#3a3330)'}
-        ],
-        muur: [
-            {n:'Sunset Wall Art',      p:80, s:'80×80cm',  img:'images/sun_decor.webp',    pos:'top'},
-            {n:'Horizon Panorama',     p:80, s:'80×35cm',  img:'images/sun_horizon.webp',  pos:'top'},
-            {n:'Nature Waves',         p:80, s:'80×50cm',  bg:'linear-gradient(135deg,#8a9e7b,#e8dcc8)'},
-            {n:'Galaxy Mirror',        p:80, s:'70×70cm',  bg:'linear-gradient(135deg,#7b3fa8,#818cf8)'},
-            {n:'Retro Arch',           p:80, s:'80×60cm',  bg:'linear-gradient(135deg,#fb7185,#e8c06a)'},
-            {n:'Mono Cloud',           p:80, s:'50×50cm',  bg:'linear-gradient(135deg,#3a3330,#6b6360)'}
-        ]
-    };
-
-    const ALL_ITEMS = [
-        ...PRODUCTS.keyboard.slice(0,3),
-        ...PRODUCTS.tapijten.slice(0,2),
-        ...PRODUCTS.muur.slice(0,2)
-    ];
-
-    const WA = '32489345632';
-
-    // =============================================
-    // HELPERS
-    // =============================================
-    function cardImgHTML(item, cls) {
-        if (item.img) {
-            const pos = item.pos || 'center';
-            return `<div class="${cls}"><img src="${item.img}" alt="${item.n}" loading="lazy" style="object-position:${pos}" width="400" height="200"/></div>`;
-        }
-        return `<div class="${cls} coming-soon-wrap" style="background:${item.bg||'var(--bg2)'}">
-            <div class="coming-soon-inner">
-                <span class="coming-soon-label">Coming Soon</span>
-            </div>
-        </div>`;
-    }
-
-    // =============================================
-    // RENDER: alle producten rij
-    // =============================================
-    (function renderAllProducts() {
-        const track = document.getElementById('products-track');
-        const withPhoto = ALL_ITEMS.filter(i => i.img);
-        withPhoto.forEach(item => {
-            const d = document.createElement('div');
-            d.className = 'p-card';
-            d.setAttribute('role', 'button');
-            d.setAttribute('tabindex', '0');
-            d.setAttribute('aria-label', `${item.n} toevoegen aan winkelwagen — €${item.p}`);
-            d.innerHTML = `
-            ${cardImgHTML(item, 'p-card-img')}
-            <div class="p-info">
-                <span class="p-name">${item.n}</span>
-                <span class="p-size">${item.s}</span>
-                <span class="p-price">€${item.p}</span>
-            </div>`;
-            d.addEventListener('click', () => addToCart(item.n, item.p, item.s));
-            d.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); addToCart(item.n, item.p, item.s); } });
-            track.appendChild(d);
-        });
-    })();
-
-    // =============================================
-    // RENDER: expand panels
-    // =============================================
-    Object.entries(PRODUCTS).forEach(([cat, items]) => {
-        const grid = document.querySelector(`#expand-${cat} .pgrid`);
-        if (!grid) return;
-        items.forEach(item => {
-            const d = document.createElement('div');
-            d.className = 'product-card' + (item.img ? '' : ' coming-soon-card');
-            if (item.img) {
-                d.innerHTML = `
-                ${cardImgHTML(item, 'product-card-img')}
-                <div class="product-info">
-                    <span class="product-name">${item.n}</span>
-                    <span class="product-size">${item.s}</span>
-                    <div class="product-foot">
-                        <span class="product-price">€${item.p}</span>
-                        <button class="product-btn" aria-label="${item.n} toevoegen aan winkelwagen">+ Toevoegen</button>
-                    </div>
-                </div>`;
-                d.querySelector('.product-btn').addEventListener('click', e => {
-                    e.stopPropagation();
-                    addToCart(item.n, item.p, item.s);
-                });
-            } else {
-                // FIX: aria-disabled op coming soon kaarten
-                d.setAttribute('aria-disabled', 'true');
-                d.innerHTML = `
-                ${cardImgHTML(item, 'product-card-img')}
-                <div class="product-info">
-                    <span class="product-name">${item.n}</span>
-                    <span class="coming-soon-tag" aria-label="Binnenkort beschikbaar">Binnenkort beschikbaar</span>
-                </div>`;
-            }
-            grid.appendChild(d);
-        });
-    });
-
-    // =============================================
-    // SMOOTH SCROLL
-    // =============================================
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-            const t = document.querySelector(a.getAttribute('href'));
-            if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
-        });
-    });
-
-    // =============================================
-    // NAV SCROLL
-    // =============================================
-    const nav = document.getElementById('navbar');
-    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50), {passive: true});
-
-    // =============================================
-    // MOBILE MENU
-    // =============================================
-    function toggleMobileMenu() {
-        const menu = document.getElementById('mobile-menu');
-        const btn = document.getElementById('hamburger');
-        const isOpen = menu.classList.toggle('open');
-        btn.classList.toggle('open', isOpen);
-        btn.setAttribute('aria-expanded', isOpen);
-        menu.setAttribute('aria-hidden', !isOpen);
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-    }
-    function closeMobileMenu() {
-        const menu = document.getElementById('mobile-menu');
-        const btn = document.getElementById('hamburger');
-        menu.classList.remove('open');
-        btn.classList.remove('open');
-        btn.setAttribute('aria-expanded', false);
-        menu.setAttribute('aria-hidden', true);
-        document.body.style.overflow = '';
-    }
-
-    // =============================================
-    // CAROUSEL + TOUCH/SWIPE
-    // =============================================
-    const cards = document.querySelectorAll('.c-card');
-    const total = cards.length;
-    let cur = 0;
-
-    // FIX: keyboard handler voor carousel kaarten
-    function handleCardKey(e, cat) {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openCategory(cat);
-        }
-    }
-
-    function updateCarousel() {
-        cards.forEach((c, i) => {
-            let o = i - cur;
-            if (o > total / 2) o -= total;
-            if (o < -total / 2) o += total;
-            let z, x, ry, op, sc;
-            if (o === 0) {
-                z=100; x=0; ry=0; op=1; sc=1;
-                c.setAttribute('tabindex', '0');
-                c.removeAttribute('aria-hidden');
-            } else if (Math.abs(o) === 1 || Math.abs(o) === total-1) {
-                z=0; x=(o>0||o===-(total-1)?1:-1)*220; ry=(o>0||o===-(total-1)?-35:35); op=.6; sc=.85;
-                c.setAttribute('tabindex', '-1');
-                c.setAttribute('aria-hidden', 'true');
-            } else {
-                z=-200; x=o>0?400:-400; ry=o>0?-50:50; op=0; sc=.7;
-                c.setAttribute('tabindex', '-1');
-                c.setAttribute('aria-hidden', 'true');
-            }
-            c.style.transform = `translateX(${x}px) translateZ(${z}px) rotateY(${ry}deg) scale(${sc})`;
-            c.style.opacity = op;
-            c.style.zIndex = o === 0 ? 10 : 5 - Math.abs(o);
-            c.style.pointerEvents = o === 0 ? 'auto' : 'none';
-        });
-    }
-
-    function moveCarousel(d) {
-        cur = (cur + d + total) % total;
-        updateCarousel();
-    }
-    updateCarousel();
-
-    // Touch/swipe support
-    (function addCarouselSwipe() {
-        const stage = document.querySelector('.c-stage');
-        let startX = null;
-        stage.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
-        stage.addEventListener('touchend', e => {
-            if (startX === null) return;
-            const dx = e.changedTouches[0].clientX - startX;
-            if (Math.abs(dx) > 40) moveCarousel(dx < 0 ? 1 : -1);
-            startX = null;
-        }, {passive:true});
-    })();
-
-    function setView(v) {
-        const cv = document.getElementById('carousel-view');
-        const gv = document.getElementById('grid-view');
-        const bc = document.getElementById('btn-carousel');
-        const bg = document.getElementById('btn-grid');
-        if (v === 'carousel') {
-            cv.classList.remove('hidden'); gv.classList.add('hidden');
-            bc.classList.add('active'); bg.classList.remove('active');
-            bc.setAttribute('aria-pressed', 'true');
-            bg.setAttribute('aria-pressed', 'false');
-            updateCarousel();
-        } else {
-            cv.classList.add('hidden'); gv.classList.remove('hidden');
-            bc.classList.remove('active'); bg.classList.add('active');
-            bc.setAttribute('aria-pressed', 'false');
-            bg.setAttribute('aria-pressed', 'true');
-        }
-    }
-
-    // =============================================
-    // CATEGORY EXPAND
-    // =============================================
-    function openCategory(cat) {
-        closeCategory();
-        const p = document.getElementById('expand-' + cat);
-        if (p) {
-            p.classList.add('active');
-            setTimeout(() => p.scrollIntoView({behavior:'smooth', block:'nearest'}), 100);
-            // Focus the close button for accessibility
-            setTimeout(() => {
-                const closeBtn = p.querySelector('.expand-top button');
-                if (closeBtn) closeBtn.focus();
-            }, 200);
-        }
-    }
-    function closeCategory() {
-        document.querySelectorAll('.expand').forEach(e => e.classList.remove('active'));
-    }
-
-    // =============================================
-    // CART
-    // =============================================
-    let cart = [];
-
-    function addToCart(name, price, size) {
-        const ex = cart.find(i => i.name === name);
-        if (ex) ex.qty++;
-        else cart.push({name, price, size, qty: 1});
-        updateCartUI();
-        showNotif(name);
-    }
-    function removeFromCart(idx) {
-        cart.splice(idx, 1);
-        updateCartUI();
-    }
-    function changeQty(idx, d) {
-        cart[idx].qty += d;
-        if (cart[idx].qty <= 0) cart.splice(idx, 1);
-        updateCartUI();
-    }
-    function updateCartUI() {
-        const cnt = document.getElementById('cart-count');
-        const items = document.getElementById('cart-items');
-        const empty = document.getElementById('cart-empty');
-        const foot = document.getElementById('cart-footer');
-        const tot = document.getElementById('cart-total-price');
-        const ti = cart.reduce((s,i) => s+i.qty, 0);
-        const tp = cart.reduce((s,i) => s+i.price*i.qty, 0);
-        cnt.textContent = ti;
-        cnt.style.display = ti > 0 ? 'flex' : 'none';
-        // Update aria-label on cart button for screen readers
-        const cartBtn = document.querySelector('.cart-toggle');
-        if (cartBtn) cartBtn.setAttribute('aria-label', ti > 0 ? `Winkelwagen openen — ${ti} item${ti>1?'s':''}` : 'Winkelwagen openen');
-        items.querySelectorAll('.cart-item').forEach(p => p.remove());
-        if (!cart.length) {
-            empty.style.display = 'block';
-            foot.style.display = 'none';
-            return;
-        }
-        empty.style.display = 'none';
-        foot.style.display = 'block';
-        tot.textContent = '€' + tp;
-        cart.forEach((item, idx) => {
-            const d = document.createElement('div');
-            d.className = 'cart-item';
-            d.innerHTML = `
-            <div class="ci-info">
-                <span class="ci-name">${item.name}</span>
-                <span class="ci-size">${item.size}</span>
-                <span class="ci-price">€${item.price}</span>
-            </div>
-            <div class="ci-actions">
-                <div class="qty" role="group" aria-label="Hoeveelheid ${item.name}">
-                    <button aria-label="${item.name} hoeveelheid verminderen" onclick="changeQty(${idx},-1)">−</button>
-                    <span aria-live="polite" aria-label="Hoeveelheid: ${item.qty}">${item.qty}</span>
-                    <button aria-label="${item.name} hoeveelheid verhogen" onclick="changeQty(${idx},1)">+</button>
-                </div>
-                <button class="ci-rm" aria-label="${item.name} verwijderen uit winkelwagen" onclick="removeFromCart(${idx})">✕</button>
-            </div>`;
-            items.appendChild(d);
-        });
-    }
-
-    // FIX: notif toont ook dat winkelwagen-icoon klikbaar is
-    function showNotif(name) {
-        const n = document.createElement('div');
-        n.className = 'notif';
-        n.setAttribute('role', 'status');
-        n.setAttribute('aria-live', 'polite');
-        n.innerHTML = `✓ <strong>${name}</strong> toegevoegd &nbsp;<span class="notif-hint">Bekijk winkelwagen →</span>`;
-        n.style.cursor = 'pointer';
-        n.addEventListener('click', () => { n.remove(); toggleCart(); });
-        document.body.appendChild(n);
-        setTimeout(() => n.classList.add('show'), 10);
-        setTimeout(() => { n.classList.remove('show'); setTimeout(() => { if(n.parentNode) n.remove(); }, 300); }, 3500);
-    }
-
-    function toggleCart() {
-        const sidebar = document.getElementById('cart-sidebar');
-        const overlay = document.getElementById('cart-overlay');
-        const isOpen = sidebar.classList.toggle('open');
-        overlay.classList.toggle('open', isOpen);
-        if (isOpen) {
-            const focusable = sidebar.querySelectorAll('button, [tabindex]:not([tabindex="-1"])');
-            if (focusable.length) focusable[0].focus();
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-    }
-
-    // =============================================
-    // CHECKOUT
-    // =============================================
-    function buildOrder() {
-        let m = '🧶 *Nieuwe bestelling — Rug Craft*\n\n';
-        cart.forEach(i => { m += `• ${i.name} (${i.size}) x${i.qty} — €${i.price*i.qty}\n`; });
-        m += `\n*Totaal: €${cart.reduce((s,i) => s+i.price*i.qty, 0)}*\n\nGraag ontvang ik meer info over bezorging en betaling. Bedankt! 🙏`;
-        return m;
-    }
-    function checkoutWhatsApp() { window.open(`https://wa.me/${WA}?text=${encodeURIComponent(buildOrder())}`, '_blank'); }
-    function checkoutInstagram() {
-        navigator.clipboard.writeText(buildOrder()).then(() => {
-            window.open(`https://ig.me/m/rugcraftt`, '_blank');
-        }).catch(() => {
-            window.open(`https://ig.me/m/rugcraftt`, '_blank');
-        });
-    }
-
-    // =============================================
-    // CUSTOM MODAL
-    // =============================================
-    function openCustomModal() {
-        const modal = document.getElementById('custom-modal');
-        const overlay = document.getElementById('custom-modal-overlay');
-        modal.classList.add('open');
-        overlay.classList.add('open');
-        document.body.style.overflow = 'hidden';
-        setTimeout(() => { const f = modal.querySelector('select, input'); if(f) f.focus(); }, 100);
-    }
-    function closeCustomModal() {
-        document.getElementById('custom-modal').classList.remove('open');
-        document.getElementById('custom-modal-overlay').classList.remove('open');
-        document.body.style.overflow = '';
-    }
-    function buildCustomMsg() {
-        const t = document.getElementById('custom-type').value;
-        const n = document.getElementById('custom-name').value;
-        return `🎨 *Custom Design Aanvraag — Rug Craft*\n\n*Naam:* ${n||'-'}\n*Type:* ${t}\n\nIk stuur een foto mee van mijn idee. Wat zijn de mogelijkheden en de prijs? Bedankt! 🙏`;
-    }
-    function customWhatsApp() { window.open(`https://wa.me/${WA}?text=${encodeURIComponent(buildCustomMsg())}`, '_blank'); }
-    function customInstagram() {
-        navigator.clipboard.writeText(buildCustomMsg()).catch(() => {});
-        window.open(`https://ig.me/m/rugcraftt`, '_blank');
-    }
-
-    // =============================================
-    // CONTACT FORM
-    // =============================================
-    function getContactFields() {
-        const name    = document.getElementById('cf-name').value.trim();
-        const email   = document.getElementById('cf-email').value.trim();
-        const subject = document.getElementById('cf-subject').value;
-        const msg     = document.getElementById('cf-message').value.trim();
-        return { name, email, subject, msg };
-    }
-    function buildContactMsg() {
-        const { name, email, subject, msg } = getContactFields();
-        if (!msg) { showContactError('Vul je bericht in.'); return null; }
-        return `📩 *Contactformulier — Rug Craft*\n\n*Naam:* ${name||'-'}\n*E-mail:* ${email||'-'}\n*Onderwerp:* ${subject||'-'}\n\n*Bericht:*\n${msg}\n\nBedankt! 🙏`;
-    }
-    function showContactError(txt) {
-        const el = document.getElementById('cf-error');
-        el.textContent = txt; el.style.display = 'block';
-        setTimeout(() => el.style.display = 'none', 4000);
-    }
-    async function sendContactEmail() {
-        const { name, email, subject, msg } = getContactFields();
-        if (!msg) { showContactError('Vul je bericht in.'); return; }
-        if (!email) { showContactError('Vul je e-mailadres in zodat we kunnen antwoorden.'); return; }
-        const btn = document.getElementById('cf-btn-email');
-        btn.disabled = true; btn.textContent = 'Verzenden…';
-        try {
-            const res = await fetch('https://formspree.io/f/mvzwobry', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify({ name, email, subject, message: msg })
-            });
-            if (res.ok) {
-                btn.textContent = '✓ Verstuurd!';
-                btn.style.background = '#2e7d32';
-                ['cf-name','cf-email','cf-subject','cf-message'].forEach(id => {
-                    const el = document.getElementById(id);
-                    if (el) el.value = '';
-                });
-                setTimeout(() => { btn.disabled = false; btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg> Verstuur e-mail'; btn.style.background = ''; }, 4000);
-            } else {
-                throw new Error('mislukt');
-            }
-        } catch {
-            btn.disabled = false;
-            btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg> Verstuur e-mail';
-            showContactError('Er ging iets mis. Probeer het opnieuw of gebruik WhatsApp.');
-        }
-    }
-    // FIX: WhatsApp contact knop werkt ook zonder e-mail invullen
-    function sendContactWhatsApp() {
-        const { name, subject, msg } = getContactFields();
-        if (!msg) { showContactError('Vul eerst je bericht in.'); return; }
-        const text = `📩 *Contactformulier — Rug Craft*\n\n*Naam:* ${name||'-'}\n*Onderwerp:* ${subject||'-'}\n\n*Bericht:*\n${msg}\n\nBedankt! 🙏`;
-        window.open(`https://wa.me/${WA}?text=${encodeURIComponent(text)}`, '_blank');
-    }
-
-    // =============================================
-    // KEYBOARD SHORTCUTS
-    // =============================================
-    document.addEventListener('keydown', e => {
-        const cartOpen = document.getElementById('cart-sidebar').classList.contains('open');
-        const modalOpen = document.getElementById('custom-modal').classList.contains('open');
-
-        if (e.key === 'ArrowLeft' && !cartOpen && !modalOpen) moveCarousel(-1);
-        if (e.key === 'ArrowRight' && !cartOpen && !modalOpen) moveCarousel(1);
-        if (e.key === 'Escape') {
-            closeCategory();
-            closeCustomModal();
-            closeMobileMenu();
-            if (cartOpen) toggleCart();
-        }
-        // Focus trap voor cart
-        if (e.key === 'Tab' && cartOpen) {
-            const sidebar = document.getElementById('cart-sidebar');
-            const focusable = [...sidebar.querySelectorAll('button, [tabindex]:not([tabindex="-1"])')];
-            if (!focusable.length) return;
-            const first = focusable[0], last = focusable[focusable.length-1];
-            if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-            else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-        }
-        // Focus trap voor modal
-        if (e.key === 'Tab' && modalOpen) {
-            const modal = document.getElementById('custom-modal');
-            const focusable = [...modal.querySelectorAll('button, select, input, textarea, [tabindex]:not([tabindex="-1"])')];
-            if (!focusable.length) return;
-            const first = focusable[0], last = focusable[focusable.length-1];
-            if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-            else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-        }
-    });
-</script>
+<script src="main.js" defer></script>
 </body>
 </html>
