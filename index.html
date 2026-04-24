@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+    <title>Rug Craft — Handmade Tufted Rugs</title>
+    <meta name="description" content="Handmade tufted rugs on demand. Keyboard rugs, carpets and wall art handcrafted in Belgium. Free shipping in NL & BE."/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<header id="header">
+    <nav class="nav-inner">
+        <a href="/" class="nav-logo">RUG<span>CRAFT</span></a>
+        <ul class="nav-links">
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#making">Process</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="cart-btn" onclick="toggleCart()" aria-label="Shopping cart">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                <span class="cart-badge" id="cart-badge">0</span>
+            </button>
+            <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-overlay" id="mobile-overlay" onclick="toggleMobile()"></div>
+<nav class="mobile-nav" id="mobile-nav">
+    <button class="mobile-close" onclick="toggleMobile()">✕</button>
+    <ul>
+        <li><a href="#shop" onclick="toggleMobile()">Shop</a></li>
+        <li><a href="#making" onclick="toggleMobile()">Process</a></li>
+        <li><a href="#faq" onclick="toggleMobile()">FAQ</a></li>
+        <li><a href="#contact" onclick="toggleMobile()">Contact</a></li>
+    </ul>
+    <div class="mobile-cta">
+        <a href="#" onclick="openCustomModal();toggleMobile()" class="btn-primary">Request Custom Design</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="hero-content">
+        <div class="hero-badge">Handcrafted in Belgium</div>
+        <h1>Your design.<br/><em>Our craft.</em></h1>
+        <p class="hero-sub">Hand-tufted rugs made to order. Premium yarn, 48+ colours, delivered to your door.</p>
+        <div class="hero-actions">
+            <a href="#shop" class="btn-primary">Shop Collection</a>
+            <a href="#" onclick="openCustomModal()" class="btn-outline">Custom Design →</a>
+        </div>
+        <div class="hero-trust">
+            <div class="trust-pill"><span>✓</span> Free shipping NL & BE</div>
+            <div class="trust-pill"><span>✓</span> 3–8 days delivery</div>
+            <div class="trust-pill"><span>✓</span> 100% handmade</div>
+        </div>
+    </div>
+    <div class="hero-showcase-wrap">
+        <div class="hero-showcase" id="hero-showcase"></div>
+        <div class="showcase-dots" id="showcase-dots"></div>
+    </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider-bar">
+    <div class="divider-item">Handcrafted in Belgium</div>
+    <div class="divider-item"><div class="divider-dot"></div></div>
+    <div class="divider-item">Premium Yarn</div>
+    <div class="divider-item"><div class="divider-dot"></div></div>
+    <div class="divider-item">48+ Colours</div>
+    <div class="divider-item"><div class="divider-dot"></div></div>
+    <div class="divider-item">Free Shipping NL & BE</div>
+    <div class="divider-item"><div class="divider-dot"></div></div>
+    <div class="divider-item">Made to Order</div>
+</div>
+
+<!-- SHOP -->
+<section class="shop-section" id="shop">
+    <div class="section-header">
+        <h2>Shop <em>Collection</em></h2>
+        <p class="section-sub">Every rug is hand-tufted with care. Pick a design or request your own.</p>
+    </div>
+    <div class="filter-bar" id="filter-bar"></div>
+    <div class="products-grid" id="products-grid"></div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="ig-section" id="instagram">
+    <div class="ig-inner">
+        <div class="ig-text">
+            <span class="ig-label">@rugcraftt</span>
+            <h2>Follow the <em>craft</em></h2>
+            <p>Behind-the-scenes, new drops and daily inspiration on our Instagram.</p>
+            <a href="https://instagram.com/rugcraftt" target="_blank" class="btn-outline ig-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                Follow @rugcraftt
+            </a>
+        </div>
+        <div class="ig-grid" id="ig-grid"></div>
+    </div>
+    <div class="ig-stats">
+        <div class="ig-stat"><span class="ig-stat-num">50+</span><span class="ig-stat-label">Followers</span></div>
+        <div class="ig-stat"><span class="ig-stat-num">★ 4.9</span><span class="ig-stat-label">Rating</span></div>
+        <div class="ig-stat"><span class="ig-stat-num">20+</span><span class="ig-stat-label">Happy customers</span></div>
+        <div class="ig-stat"><span class="ig-stat-num">100%</span><span class="ig-stat-label">Handmade</span></div>
+    </div>
+</section>
+
+<!-- HOW IT'S MADE -->
+<section class="making-section" id="making">
+    <div class="making-inner">
+        <div class="making-visual">
+            <div class="making-video-wrap">
+                <video class="making-video" id="making-video" playsinline muted loop>
+                    <source src="https://res.cloudinary.com/dbz1qf5qf/video/upload/v1774960286/732fecd5589945fb8f9ec877d123cd18_yijto5.mov" type="video/mp4"/>
+                </video>
+                <button class="making-play-btn" id="making-play-btn" onclick="toggleMakingVideo()" aria-label="Play video">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="making-content">
+            <h2>From thread to <em>masterpiece</em></h2>
+            <p class="making-intro">Every rug starts with an idea. We transform it into a unique, handmade work of art — loop by loop.</p>
+            <div class="making-steps">
+                <div class="making-step"><div class="step-num">01</div><div><h4>Transfer the design</h4><p>Grid by grid onto the tufting canvas.</p></div></div>
+                <div class="making-step"><div class="step-num">02</div><div><h4>Choose yarn colours</h4><p>From over 48 colours — the perfect combination.</p></div></div>
+                <div class="making-step"><div class="step-num">03</div><div><h4>Tufting with the gun</h4><p>Loop by loop — a meditative, artisanal process.</p></div></div>
+                <div class="making-step"><div class="step-num">04</div><div><h4>Finishing & backing</h4><p>Anti-slip backing, trimming and quality check.</p></div></div>
+            </div>
+            <a href="#" onclick="openCustomModal()" class="btn-primary">Start your design →</a>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+    <div class="stat-item"><div class="stat-num">48+</div><div class="stat-label">Yarn colours</div></div>
+    <div class="stat-item"><div class="stat-num">2–5</div><div class="stat-label">Days delivery</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Made to order</div></div>
+    <div class="stat-item"><div class="stat-num">€0</div><div class="stat-label">Shipping BE & NL</div></div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+    <div class="section-header">
+        <h2>Got <em>questions?</em></h2>
+    </div>
+    <div class="faq-list" id="faq-list"></div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+    <div class="contact-inner">
+        <div class="contact-left">
+            <h2>Get in <em>touch</em></h2>
+            <p>Question about a product or want something custom? We respond quickly.</p>
+            <div class="contact-channels">
+                <a href="https://wa.me/32489345632" target="_blank" class="channel-card">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    <div><strong>WhatsApp</strong><span>+32 489 34 56 32</span></div>
+                </a>
+                <a href="https://instagram.com/rugcraftt" target="_blank" class="channel-card">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                    <div><strong>Instagram</strong><span>@rugcraftt</span></div>
+                </a>
+            </div>
+        </div>
+        <div class="contact-form-wrap">
+            <form class="contact-form" onsubmit="submitForm(event)">
+                <div class="form-row">
+                    <div class="form-field"><label>Name</label><input type="text" id="cf-name" placeholder="Your name"/></div>
+                    <div class="form-field"><label>Email</label><input type="email" id="cf-email" placeholder="your@email.com"/></div>
+                </div>
+                <div class="form-field">
+                    <label>Subject</label>
+                    <select id="cf-subject">
+                        <option value="">Select a subject...</option>
+                        <option>Order question</option>
+                        <option>Custom request</option>
+                        <option>Shipping & delivery</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-field"><label>Message</label><textarea id="cf-msg" rows="4" placeholder="What would you like to know?"></textarea></div>
+                <div class="form-btns">
+                    <button type="submit" class="btn-primary">Send Message</button>
+                    <button type="button" class="btn-wa-sm" onclick="sendWA()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        WhatsApp
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-cta">
+        <h2>Ready to start?<br/><em>Send us your design.</em></h2>
+        <a href="#" onclick="openCustomModal()" class="btn-primary">Request Custom →</a>
+    </div>
+    <div class="footer-bottom">
+        <div class="footer-logo">RUGCRAFT</div>
+        <div class="footer-nav">
+            <a href="#shop">Shop</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-legal">© 2026 Rug Craft — Handmade in Belgium</div>
+    </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/32489345632" target="_blank" class="floating-wa" id="floating-wa" aria-label="WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- CART SIDEBAR -->
+<div class="sidebar-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+<aside class="cart-sidebar" id="cart-sidebar">
+    <div class="sidebar-header">
+        <h3>Your Cart</h3>
+        <button onclick="toggleCart()" class="close-btn">✕</button>
+    </div>
+    <div class="cart-body" id="cart-body">
+        <div class="cart-empty" id="cart-empty"><div class="empty-icon">🧶</div><p>Your cart is empty</p><span>Add some rugs to get started</span></div>
+        <div id="cart-items-list"></div>
+    </div>
+    <div class="cart-footer" id="cart-footer" style="display:none">
+        <div class="cart-total-row"><span>Total</span><span class="total-amount" id="total-amount">€0</span></div>
+        <p class="shipping-note">✓ Free shipping in NL & BE</p>
+        <div class="checkout-actions"></div>
+    </div>
+</aside>
+
+<!-- PRODUCT MODAL -->
+<div class="modal-overlay" id="product-modal-overlay" onclick="closeProductModal()"></div>
+<div class="product-modal" id="product-modal">
+    <button class="modal-close" onclick="closeProductModal()">✕</button>
+    <div class="product-modal-inner" id="product-modal-inner"></div>
+</div>
+
+<!-- CUSTOM MODAL -->
+<div class="modal-overlay" id="custom-modal-overlay" onclick="closeCustomModal()"></div>
+<div class="custom-modal" id="custom-modal">
+    <div class="modal-header">
+        <h3>Request a Custom Design</h3>
+        <button onclick="closeCustomModal()" class="close-btn">✕</button>
+    </div>
+    <div class="modal-body">
+        <div class="form-field"><label>Product type</label><select id="cm-type"><option>Keyboard Rug — from €35</option><option>Carpet — from €50</option><option>Wall art — from €50</option></select></div>
+        <div class="form-field"><label>Size</label><select id="cm-size"><option value="">Not sure yet</option><option>42×16 cm (Keyboard)</option><option>40×40 cm</option><option>50×40 cm</option><option>50×50 cm</option><option>60×40 cm</option><option>60×60 cm</option><option>80×60 cm</option><option>80×80 cm</option><option>Custom size</option></select></div>
+        <div class="form-field"><label>Your name</label><input type="text" id="cm-name" placeholder="Name"/></div>
+        <div class="form-field"><label>Description / wishes</label><textarea id="cm-desc" rows="3" placeholder="Logo, character, colour, pattern..."></textarea></div>
+        <div class="form-field">
+            <label>Inspiration photo</label>
+            <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-input').click()">
+                <input type="file" id="file-input" accept="image/*" style="display:none" onchange="handleFile(this.files[0])"/>
+                <div id="upload-idle"><span class="upload-icon">📎</span><span>Click or drag your photo here</span><small>JPG, PNG — max 10MB</small></div>
+                <div id="upload-preview" style="display:none"><img id="preview-img" src="" alt="Preview"/><button onclick="removeFile(event)" class="remove-file">✕</button></div>
+            </div>
+        </div>
+        <div class="custom-actions">
+            <button class="btn-wa-full" onclick="customWA()"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Send via WhatsApp</button>
+            <button class="btn-ig-full" onclick="customIG()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>Send via Instagram</button>
+        </div>
+    </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+<script src="main.js"></script>
+</body>
+</html>
